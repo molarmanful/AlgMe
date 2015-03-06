@@ -27,6 +27,7 @@ function getSelectionText() {
             'top': '5%',
             'right': '5%'
         });
+        $(document).off('mouseup');
     });
   });
 })();
