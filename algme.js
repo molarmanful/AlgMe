@@ -17,6 +17,16 @@ function getSelectionText() {
 (function(){
   //get cube visualizer script
   $.getScript('http://molarmanful.github.io/gCube/gcube.js').done(function(){
-    
+    $(document).mouseup(function(){
+        var alg = getSelectionText();
+        $('body').append('<g-cube id="gcubeviz"><g-algorithm>' + alg + '</g-algorithm></g-cube>');
+        $('#gcubeviz').css({
+            'position': 'fixed',
+            'height': '10%',
+            'width': '10%',
+            'top': '5%',
+            'right': '5%'
+        });
+    });
   });
 })();
