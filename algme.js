@@ -17,17 +17,24 @@ function getSelectionText() {
 (function(){
   //get cube visualizer script
   $.getScript('http://molarmanful.github.io/gCube/gcube.js').done(function(){
-    $(document).mouseup(function(){
+    $('body').children().select(function(){
         var alg = getSelectionText();
-        $('body').append('<g-cube id="gcubeviz"><g-algorithm>' + alg + '</g-algorithm></g-cube>');
-        $('#gcubeviz').css({
-            'position': 'fixed',
-            'height': '10%',
-            'width': '10%',
-            'top': '5%',
-            'right': '5%'
-        });
-        $(document).off('mouseup');
+        if(alg != ''){
+            if($('#gcubeviz').length){
+                $('#gcubeviz').setalg(alg);
+            } else {
+                $('body').append('<g-cube id="gcubeviz"><g-algorithm>' + alg + '</g-algorithm></g-cube>');
+                $('#gcubeviz').css({
+                    'position': 'fixed',
+                    'height': '10%',
+                    'width': '10%',
+                    'top': '5%',
+                    'right': '5%',
+                    'background-color': '#ffffff'
+                    'z-index': '1000'
+                });
+            }
+        }
     });
   });
 })();
