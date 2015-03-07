@@ -1,2 +1,6 @@
 # AlgMe
 Bookmarklet. Click the bookmarklet and highlight a Rubik's Cube alg to view the alg played on a virtual cube...
+
+Drag this link into your bookmarks bar to get started:
+
+[AlgMe](javascript:(function()%7Bfunction%20callback()%7B(function(%24)%7Bvar%20jQuery%3D%24%3Bfunction%20callback()%7B%24(document).mouseup(function()%7Bvar%20alg%20%3D%20getSelectionText()%3B%24('body').append('%3Cg-cube%20id%3D%22gcubeviz%22%3E%3Cg-algorithm%3E'%20%2B%20alg%20%2B%20'%3C%2Fg-algorithm%3E%3C%2Fg-cube%3E')%3B%24('%23gcubeviz').css(%7B'position'%3A%20'fixed'%2C'height'%3A%20'10%25'%2C'width'%3A%20'10%25'%2C'top'%3A%20'5%25'%2C'right'%3A%20'5%25'%7D)%3B%24(document).off('mouseup')%3B%7D)%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22http%3A%2F%2Fmolarmanful.github.io%2FgCube%2Fgcube.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)(jQuery.noConflict(true))%7Dvar%20s%3Ddocument.createElement(%22script%22)%3Bs.src%3D%22https%3A%2F%2Fajax.googleapis.com%2Fajax%2Flibs%2Fjquery%2F1.7.1%2Fjquery.min.js%22%3Bif(s.addEventListener)%7Bs.addEventListener(%22load%22%2Ccallback%2Cfalse)%7Delse%20if(s.readyState)%7Bs.onreadystatechange%3Dcallback%7Ddocument.body.appendChild(s)%3B%7D)())
