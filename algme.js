@@ -1,6 +1,6 @@
 (function(){
   //get jQuery
-    if(typeof jQuery == 'undefined' || jQuery().jquery != '2.1.3'){
+    if(typeof jQuery == 'undefined'){
         var jq = document.createElement('script');
         jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js";
         document.head.appendChild(jq);
