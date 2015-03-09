@@ -32,7 +32,7 @@
                     'width': '10%',
                     'top': '5%',
                     'right': '5%',
-                    'background-color': '#ffffff'
+                    'background-color': '#ffffff',
                     'z-index': '1000'
                 });
             }
