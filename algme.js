@@ -2,7 +2,7 @@
   //get jQuery
   var jq = document.createElement('script');
   jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js";
-  document.head.appendChild(jq);
+  document.head.insertBefore(jq, document.head.childNodes[0]);
   
   //preliminary functions
   function getSelectionText() {
