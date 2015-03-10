@@ -16,12 +16,12 @@
   }
 
   //get cube visualizer script
-  $.getScript('http://molarmanful.github.io/gCube/gcube.js').done(function(){
+  $.getScript('https://molarmanful.github.io/gCube/gcube.js').done(function(){
     console.log('AlgMe has loaded. Start selecting an algorithm.');
     $(document).select(function(){
       var alg = getSelectionText();
-      console.log(alg);
       if(alg != ''){
+        console.log('Selected algorithm:' + alg);
         if($('#gcubeviz').length){
           $('#gcubeviz').setalg(alg);
         } else {
