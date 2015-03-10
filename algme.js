@@ -21,7 +21,7 @@
     if(alg != ''){
       console.log('Selected algorithm:' + alg);
       if($('#cubeviz').length){
-        $('#cubeviz').setalg(alg);
+        $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg');
       } else {
         $('body').append('<iframe id="cubeviz" src="http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg"></iframe>');
         $('#cubeviz').css({
