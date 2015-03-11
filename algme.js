@@ -43,11 +43,11 @@
       alg = $.selection();
       if(alg != ''){
         console.log('Highlighted algorithm: ' + alg);
-        $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle option:selected').text() + '&stage=' + $('#stage option:selected').text());
+        $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle option').prop('selected', true).text() + '&stage=' + $('#stage option:selected').prop('selected', true).text());
       }
     });
     $('#cvcsubmit').click(function(){
-      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle option:selected').text() + '&stage=' + $('#stage option:selected').text());
+      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle option').prop('selected', true).text() + '&stage=' + $('#stage option:selected').prop('selected', true).text());
     });
   }
 })();
