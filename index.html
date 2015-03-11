@@ -4,6 +4,13 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="http://www.blazeboy.me/Rubik-s-cube-timer/timer.js"></script>
+    <script>
+      $(document).ready(function(){
+        var timer = new Timer(document.getElementById('asdf'), document.getElementById('scramble'));
+        timer.scramble();
+      });
+    </script>
     <title>AlgMe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -25,7 +32,7 @@
             <li>Go to a site with some cube algorithms that you need to learn.</li>
             <li>Click the bookmarklet.</li>
             <li>Adjust the settings.</li>
-            <li>Highlight an algorithm. You can test here:<br><code>M2 E2 S2</code></li>
+            <li>Highlight an algorithm. You can test here:<br><code id="scramble"></code></li>
             <li>Repeat step 5 if needed, and enjoy!</li>
           </ol>
         </div>
