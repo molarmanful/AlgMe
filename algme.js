@@ -15,35 +15,35 @@
     return text;
   }
 
-  console.log('AlgMe has loaded. Please highlight an algorithm.');
-  $('body').append('<iframe frameborder="0" id="cubeviz" src="http://alg.cubing.net/?view=fullscreen&type=alg"></iframe>');
-  $('#cubeviz').css({
-      'position': 'fixed',
-      'height': '10%',
-      'width': '10%',
-      'top': '5%',
-      'right': '5%',
-      'background-color': '#ffffff',
-      'z-index': '1000'
-  });
-  $('body').append('<div id="cvc"><select id="puzzle"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option><option>17x17x17</option></select><select id="stage"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select></div>');
-  $('#cvc').css({
-    'position': 'fixed',
-    'height': '10%',
-    'width': '10%',
-    'bottom': '5%',
-    'right': '5%',
-    'background-color': '#ffffff',
-    'z-index': '1000',
-    'display': 'none'
-  });
-  $('body *').select(function(){
-    var alg = getSelectionText();
-    console.log('Highlight an algorithm: ' + alg);
-    $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle:selected').text() + '&stage=' + $('#stage:selected').text());
-    $('#cvc').fadeIn();
-    $('#cvc select').change(function(){
-      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle:selected').text() + '&stage=' + $('#stage:selected').text());
+  if(!$('#cubeviz').length){
+    console.log('AlgMe has loaded. Please highlight an algorithm.');
+    $('body').append('<iframe frameborder="0" id="cubeviz" src="http://alg.cubing.net/?view=fullscreen&type=alg"></iframe>');
+    $('#cubeviz').css({
+        'position': 'fixed',
+        'height': '30%',
+        'width': '30%',
+        'top': '5%',
+        'right': '5%',
+        'background-color': '#ffffff',
+        'z-index': '1000'
     });
-  });
+    $('body').append('<div id="cvc"><select id="puzzle"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option><option>17x17x17</option></select><select id="stage"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select></div>');
+    $('#cvc').css({
+      'position': 'fixed',
+      'top': '0',
+      'right': '0',
+      'background-color': '#ffffff',
+      'z-index': '1000',
+      'display': 'none'
+    });
+    $('body *').select(function(){
+      var alg = getSelectionText();
+      console.log('Highlight an algorithm: ' + alg);
+      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle:selected').text() + '&stage=' + $('#stage:selected').text());
+      $('#cvc').fadeIn();
+      $('#cvc select').change(function(){
+        $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle:selected').text() + '&stage=' + $('#stage:selected').text());
+      });
+    });
+  }
 })();
