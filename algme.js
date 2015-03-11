@@ -38,7 +38,7 @@
     });
     var alg = '';
     $(document).click(function(){
-      alg = $.selection().replace('`', '\'');
+      alg = $.selection().replace('`', "'");
       if(alg != ''){
         console.log('Highlighted algorithm: ' + alg);
         $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
