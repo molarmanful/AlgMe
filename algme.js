@@ -16,7 +16,7 @@
   }
 
   console.log('AlgMe has loaded. Start selecting an algorithm.');
-  $('body').children().select(function(){
+  $('body *').select(function(){
     var alg = getSelectionText();
     if(alg != ''){
       console.log('Selected algorithm:' + alg);
