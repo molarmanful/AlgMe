@@ -26,7 +26,7 @@
         'height': '30%',
         'width': '30%',
         'top': '5%',
-        'right': '5%',
+        'right': '0',
         'background-color': '#ffffff',
         'z-index': '1000'
     });
@@ -36,8 +36,7 @@
       'top': '0',
       'right': '0',
       'background-color': '#ffffff',
-      'z-index': '1000',
-      'display': 'none'
+      'z-index': '1000'
     });
     var alg = '';
     $(document).click(function(){
