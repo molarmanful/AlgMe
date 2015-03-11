@@ -16,7 +16,7 @@
   }
 
   console.log('AlgMe has loaded. Please highlight an algorithm.');
-  $('body').append('<iframe id="cubeviz" src="http://alg.cubing.net/?view=fullscreen&type=alg"></iframe>');
+  $('body').append('<iframe frameborder="0" id="cubeviz" src="http://alg.cubing.net/?view=fullscreen&type=alg"></iframe>');
   $('#cubeviz').css({
       'position': 'fixed',
       'height': '10%',
@@ -34,11 +34,16 @@
     'bottom': '5%',
     'right': '5%',
     'background-color': '#ffffff',
-    'z-index': '1000'
+    'z-index': '1000',
+    'display': 'none'
   });
   $('body *').select(function(){
     var alg = getSelectionText();
     console.log('Highlight an algorithm: ' + alg);
     $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle:selected').text() + '&stage=' + $('#stage:selected').text());
+    $('#cvc').fadeIn();
+    $('#cvc select').change(function(){
+      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=alg&puzzle=' + $('#puzzle:selected').text() + '&stage=' + $('#stage:selected').text());
+    });
   });
 })();
