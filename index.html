@@ -9,6 +9,7 @@
       $(document).ready(function(){
         var timer = new Timer(document.getElementById('asdf'), document.getElementById('scramble'));
         timer.scramble();
+        $('#scramble').text($('#scramble').text().replace('`', '\''));
       });
     </script>
     <title>AlgMe</title>
