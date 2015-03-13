@@ -35,7 +35,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         'right': '0',
         'z-index': '1000'
     });
-    $('body').append('<style>@import url("http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")</style><div class="form-inline"><div id="cvc" class="form-group"><select id="scheme" class="form-control"><option>BOY</option><option>Japanese</option></select><select id="type" class="form-control"><option id="alg">To Solved State</option><option id="moves">From Solved State</option></select><select id="puzzle" class="form-control"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option></select><select id="stage" class="form-control"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select><button id="cvcsubmit" class="btn btn-primary">Submit</button></div></div>');
+    $('body').append('<style>@import url("http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")</style><div class="form-inline"><div id="cvc" class="form-group"><select id="scheme" class="form-control"><option>BOY</option><option>Japanese</option></select><select id="type" class="form-control"><option id="alg">To Solved State</option><option id="moves">From Solved State</option></select><select id="puzzle" class="form-control"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option></select><select id="stage" class="form-control"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select></div></div>');
     $('#cvc').css({
       'position': 'fixed',
       'top': '0',
@@ -50,7 +50,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&scheme=' + $('#scheme').val().toLowerCase() + '&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
       }
     });
-    $('#cvcsubmit').click(function(){
+    $('#cvc select').change(function(){
       $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&scheme=' + $('#scheme').val().toLowerCase() + '&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
     });
   }
