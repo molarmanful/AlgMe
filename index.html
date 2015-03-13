@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//www.blazeboy.me/Rubik-s-cube-timer/timer.js"></script>
     <script>
+      var Timer=function(t,n){this.start_t=null,this.interval=null,this.DOM=t,this.DOM_scramble=n,this.toggle=function(){null==this.interval?this.start():this.end()},this.start=function(){this.start_t=new Date;var t=this,n=function(){t.update()};this.interval=setInterval(n,10)},this.scramble=function(){for(var t=["R","L","U","D","F","B"],n=["","`"],i=["","2"],a=25,r="",e=-1,h=0;a>h;h++){do var l=Math.floor(Math.random()*t.length);while(l==e);e=l;var s=Math.floor(Math.random()*n.length),o=0==s?Math.floor(Math.random()*i.length):0;r+=t[l]+n[s]+i[o]+" "}this.DOM_scramble.innerHTML=r},this.end=function(){clearInterval(this.interval),this.interval=null,timer_obj.scramble()},this.update=function(){var t=(new Date-this.start_t)/1e3,n=60>t?0:Math.floor(Math.floor(t)/60);t=(t%60).toFixed(3),this.DOM.innerHTML=n.toString()+":"+t}};
       $(document).ready(function(){
         var timer = new Timer(document.getElementById('asdf'), document.getElementById('scramble'));
         timer.scramble();
