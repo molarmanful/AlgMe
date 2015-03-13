@@ -29,7 +29,7 @@
         'right': '0',
         'z-index': '1000'
     });
-    $('body').append('<div id="cvc"><select id="type"><option id="alg">To Solved State</option><option id="moves">From Solved State</option></select><select id="puzzle"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option></select><select id="stage"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select><button id="cvcsubmit">Submit</button></div>');
+    $('body').append('<div id="cvc"><select id="scheme"><option>BOY</option><option>Japanese</option></select><select id="type"><option id="alg">To Solved State</option><option id="moves">From Solved State</option></select><select id="puzzle"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option></select><select id="stage"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select><button id="cvcsubmit">Submit</button></div>');
     $('#cvc').css({
       'position': 'fixed',
       'top': '0',
@@ -41,11 +41,11 @@
       alg = $.selection().replace(/`/g, '\'');
       if(alg != ''){
         console.log('Highlighted algorithm: ' + alg);
-        $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
+        $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&scheme=' + $('#scheme').val().toLowerCase() + '&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
       }
     });
     $('#cvcsubmit').click(function(){
-      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
+      $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&scheme=' + $('#scheme').val().toLowerCase() + '&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
     });
   }
 })();
