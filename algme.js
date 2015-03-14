@@ -44,7 +44,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     });
     var alg = '';
     $(document).click(function(){
-      alg = $.selection().replace(/`/g, '\'');
+      alg = $.selection().replace(/`|'/g, '\'').replace('²', '2');
       if(alg != ''){
         console.log('Highlighted algorithm: ' + alg);
         $('#cubeviz').attr('src', 'http://alg.cubing.net/?view=fullscreen&scheme=' + $('#scheme').val().toLowerCase() + '&alg=' + alg + '&type=' + $('#type option:selected').attr('id') + '&puzzle=' + $('#puzzle').val() + '&stage=' + $('#stage').val());
