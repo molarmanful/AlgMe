@@ -45,7 +45,8 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
       'right': '0',
       'z-index': '1000',
       'font-family': 'Helvetica',
-      'font-size': '16px'
+      'font-size': '16px',
+      'border': 'none'
     });
     var alg = '';
     $(document).click(function(){
