@@ -24,6 +24,13 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     }
     return text;
   }
+  var index_highest = 0;
+  $('body').children().each(function() {
+      var index_current = parseInt($(this).css("zIndex"), 10);
+      if(index_current > index_highest) {
+          index_highest = index_current;
+      }
+  });
   if(!$('#cubeviz').length){
     console.log('AlgMe has loaded. Please highlight an algorithm.');
     $('body').append('<iframe frameborder="0" id="cubeviz" src="https://alg.cubing.net/?view=fullscreen&type=alg"></iframe>');
@@ -33,14 +40,14 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
         'width': '30%',
         'top': '5%',
         'right': '0',
-        'z-index': '10000'
+        'z-index': index_highest + 1
     });
     $('body').append('<style>@import url("https://gist.githubusercontent.com/GFoley83/7d71fb9605cad6de2a8b/raw/e1eec5f79d3132af7401fdd1ad1c584d4b3f4d75/tw-bs.3.1.1.css");</style><div id="cvc" class="tw-bs"><div class="form-inline"><div class="form-group"><select id="scheme" class="form-control"><option>BOY</option><option>Japanese</option></select><select id="type" class="form-control"><option id="alg">To Solved State</option><option id="moves">From Solved State</option></select><select id="puzzle" class="form-control"><option>3x3x3</option><option>1x1x1</option><option>2x2x2</option><option>4x4x4</option><option>5x5x5</option><option>6x6x6</option><option>7x7x7</option><option>8x8x8</option><option>9x9x9</option></select><select id="stage" class="form-control"><option>Full</option><option>PLL</option><option>OLL</option><option>LL</option><option>F2L</option><option>CLS</option><option>ELS</option><option>L6E</option><option>WV</option><option>void</option></select></div></div></div>');
     $('#cvc').css({
       'position': 'fixed',
       'top': '0',
       'right': '0',
-      'z-index': '10000',
+      'z-index': index_highest + 1
     });
     $('#cvc select').css({
       'font-family': 'Helvetica',
