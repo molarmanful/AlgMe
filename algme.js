@@ -52,7 +52,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     $('#cvc select').css({
       'font-family': 'Helvetica',
       'font-size': '16px',
-      'border': 'none'
+      'border': '1px solid DarkGray'
     });
     var alg = '';
     $(document).click(function(){
